@@ -8,8 +8,9 @@ function App() {
 const [babyNames,setBabyNames] = useState(BabyData)
   return (
     <div className="App">
-      <SearchBar/>
-      <BabyNameDisplay data={babyNames}/>
+      <SearchBar setData={setBabyNames}/>
+     
+      <BabyNameDisplay data={babyNames} />
     </div>
   );
 }

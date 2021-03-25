@@ -1,29 +1,39 @@
 import BabyData from "./BabyData";
-
-const SearchBar = () => {
-
+// the event object , by default creates an object 
+const SearchBar = (props) => {
   // This is the input within the search bar
   let foundNames = [];
-  function searchBabyData(searchString) { // event handler responds to the key down/up event
-    BabyData.forEach((babyNames) => { // this analyses the data in the array
+  function searchBabyData(event) {
+  let searchString = event.target.value.toLowerCase();
+    // event handler responds to the key down/up event
+console.log("Search String",searchString)
+    BabyData.forEach((babyNames) => {
+      // this analyses the data in the array
       if (babyNames.name.toLowerCase().includes(searchString))
-        foundNames.concat(babyNames);
+        foundNames.push(babyNames);
     });
+console.log("Found Names",foundNames)
+    if (foundNames) {
+      props.setData(foundNames); // sets the state with that array
+    }
   }
-  // props.setFoundNames(foundNames); // sets the state with that array
-    <input onKeyUp={searchBabyData} />;
-
-  return ( 
-    <div className="baby-names">
-      {foundNames.map((element, index) => {
-        return (
-          <div key={index} className={element.sex}>
-            {element.name}
-          </div>
-        );
-      })}
+  return (
+    <div>
+      <input type="text" onKeyUp={searchBabyData} />
     </div>
   );
+
+  // return (
+  //   <div className="baby-names">
+  //     {foundNames.map((element, index) => {
+  //       return (
+  //         <div key={index} className={element.sex}>
+  //           {element.name}
+  //         </div>
+  //       );
+  //     })}
+  //   </div>
+  // );
 };
 
 export default SearchBar;
