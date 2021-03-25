@@ -1,38 +1,26 @@
-.App {
-  text-align: center;
+
+.baby-names{
+/* justify-content: space-around; */
+border: aqua solid 4px;
+margin-top: 8em;
+padding: 1em;
+display: flex;
+flex-wrap: wrap;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.f, .m{
+width: 5em;
+height: 2em;
+margin: 0.3em 1em;
+border-radius: 17%;
+text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.f{
+  background-color: pink;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.m{
+  background-color: aqua;
 }
