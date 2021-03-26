@@ -4,7 +4,7 @@ import BabyData from "./BabyData";
 import BabyNameDisplay from "./BabyNameDisplay";
 import SearchBar from "./SearchBar";
 import FavouriteNames from "./FavouriteNames.jsx";
-
+import GenderButton from "./GenderButton" 
 function App() {
   function addFavouriteName(event) {
     babyNames.forEach((element) => {
@@ -40,7 +40,8 @@ function App() {
   return (
     <div className="App">
       <SearchBar setData={setBabyNames} />
-      <FavouriteNames setData={favouriteNames} handler={removeFavouriteNames}/>
+      <GenderButton setData={babyNames} handler={setBabyNames} />
+      <FavouriteNames setData={favouriteNames} handler={removeFavouriteNames} />
       <BabyNameDisplay data={babyNames} handler={addFavouriteName} />
     </div>
   );
