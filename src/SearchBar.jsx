@@ -3,6 +3,7 @@ import BabyData from "./BabyData";
 const SearchBar = (props) => {
   // This is the input within the search bar
   let foundNames = [];
+  // let favouriteNames = [];
   function searchBabyData(event) {
   let searchString = event.target.value.toLowerCase();
     // event handler responds to the key down/up event
@@ -12,7 +13,8 @@ console.log("Search String",searchString)
       if (babyNames.name.toLowerCase().includes(searchString))
         foundNames.push(babyNames);
     });
-console.log("Found Names",foundNames)
+    console.log("Found Names", foundNames)
+    
     if (foundNames) {
       props.setData(foundNames); // sets the state with that array
     }

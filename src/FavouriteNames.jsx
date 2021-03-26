@@ -1,4 +1,3 @@
-// import BabyData from "./BabyData";
 function compare(babyOne, babyTwo) {
   // This helps put the array in order
   if (babyOne.name < babyTwo.name) {
@@ -10,18 +9,20 @@ function compare(babyOne, babyTwo) {
   return 0;
 }
 
-const BabyNameDisplay = (props) => {
+const FavouriteNames = (props) => {
   return (
-    <div className="baby-names">
-      {props.data.sort(compare).map((element, index) => {
+    <div>
+      <h2 id="favourite-names-title">Favourite Names:</h2>
+      <div className="baby-names" style={{border:"none", margin:"0em"}} >
+      {props.setData.sort(compare).map((element, index) => {
         return (
           <div key={index} className={element.sex} onClick={props.handler}>
             {element.name}
           </div>
         );
       })}
+          </div>
     </div>
   );
 };
-
-export default BabyNameDisplay;
+export default FavouriteNames;
